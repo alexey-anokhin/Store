@@ -7,9 +7,9 @@ namespace Store.Memory
     {
         private readonly Book[] books = new[]
         {
-            new Book(1, "Art of Programming", "ISBN 12312-31231", "D. Khuth"),
-            new Book(2, "Refactoring", "ISBN 12312-31232", "M. Flowler"),
-            new Book(3, "C Programming Language", "ISBN 12312-31233", "B. Kernighan, D. Ritchie"),
+            new Book(0, "Art of Programming", "ISBN 12312-31231", "D. Knuth", "LoremLoremLoremLoremLoremLoremLoremLoremLorem", 7.59m),
+            new Book(1, "Refactoring", "ISBN 12312-31232", "M. Flowler", "LoremLoremLoremLoremLoremLoremLoremLoremLorem", 6.30m),
+            new Book(2, "C Programming Language", "ISBN 12312-31233", "B. Kernighan, D. Ritchie", "LoremLoremLoremLoremLoremLoremLoremLoremLorem", 5.27m),
         };
 
         public Book[] GetAllByIsbn(string isbn)
@@ -23,6 +23,11 @@ namespace Store.Memory
             return books.Where(book => book.Author.Contains(query)
                                     || book.Title.Contains(query))
                         .ToArray();
+        }
+
+        public Book GetById(int id)
+        {
+            return books.Single(book => book.Id == id);
         }
     }
 }
