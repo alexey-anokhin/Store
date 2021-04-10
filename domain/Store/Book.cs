@@ -17,6 +17,8 @@ namespace Store
 
         public decimal Price { get; }
 
+        public int Quantity { get; set; }
+
         public Book(int id, string title, string isbn, string author, string description, decimal price)
         {
             Id = id;
