@@ -4,8 +4,6 @@ namespace Store.Web.Models
 {
     public class Cart
     {
-        internal object Items;
-
         public int OrderId { get; }
 
         public int TotalCount { get; set; }

@@ -11,7 +11,7 @@ namespace Store
         public int BookId { get; }
 
         public int Count { get; }
-
+        
         public decimal Price { get; }
         public static object DtoFactory { get; internal set; }
 
