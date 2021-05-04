@@ -4,9 +4,21 @@ namespace Store.Web.Models
 {
     public class Cart
     {
-        public Dictionary<int, int> Items { get; set; } = new Dictionary<int, int>();
+        public int OrderId { get; }
 
-        public decimal Amount { get; set; }
+        public int TotalCount { get; set; }
 
+        public decimal TotalPrice { get; set; }
+
+        public Cart(int orderId)
+        {
+            OrderId = orderId;
+            TotalCount = 0;
+            TotalPrice = 0m;
+        }
+
+        public Cart()
+        {
+        }
     }
 }

@@ -9,14 +9,14 @@ namespace Store.Web.Controllers
     public class BookController : Controller
     {
         private readonly IBookRepository bookRepository;
-        private int id;
+
 
         public BookController(IBookRepository bookRepository)
         {
             this.bookRepository = bookRepository;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
             Book book = bookRepository.GetById(id);
             return View(book);
